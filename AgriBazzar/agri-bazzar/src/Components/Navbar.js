@@ -12,29 +12,25 @@ const Navbar = (props) => {
     }
   };
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
+    <nav className="navbar navbar-expand-lg navbar-light ">
       <div className="container-fluid">
-        <Link className="navbar-brand" to="/">
-          <img src={IMG.logo} alt="agriculture" />
+        <Link to="/">
+          <img src={IMG.logo} alt="logo" />
         </Link>
+
         <form className="d-flex right-nav">
-          <Link className="navbar-brand" to="/">
-            <img src={IMG.search} alt="agriculture" />
+          <Link to="/">
+            <img src={IMG.search} alt="search" />
           </Link>
-          <Link className="navbar-brand" to="/">
-            <img src={IMG.cart} alt="agriculture" />
+          <Link to="/">
+            <img src={IMG.cart} alt="cart" />
           </Link>
-          <Link
-            to="/login"
-            onClick={props.auth.isAuth ? logout : null}
-            className="btns"
-          >
-            {props.auth.isAuth ? "Logout" : "Log In"}
-          </Link>
-          {props.auth.isAuth ? null : (
-            <Link to="/login" className="btns">
-              Sign Up
+          {props.auth.isAuth ? (
+            <Link to="/" onClick={logout}>
+              Logout
             </Link>
+          ) : (
+            <Link to="/login">Log In</Link>
           )}
         </form>
       </div>

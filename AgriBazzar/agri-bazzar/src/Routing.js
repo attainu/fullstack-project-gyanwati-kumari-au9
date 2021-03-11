@@ -3,7 +3,6 @@ import { publicFetch } from "./components/api/fetch";
 import * as Layout from "./components";
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./components/styles/style.scss";
 
 class Routing extends Component {
   googleLogin = async () => {

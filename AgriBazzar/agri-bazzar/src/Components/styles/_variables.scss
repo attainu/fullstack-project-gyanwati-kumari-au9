@@ -1,6 +1,24 @@
-$backgroundColor: #f8f8f8;
-$darkTextColor: #a9a9a9;
-$lightTextColor: #000000;
-$navBackgroundColor: #fcfcfc;
+@font-face {
+  font-family: ubantuReg;
+  src: url(../fonts//Ubuntu/Ubuntu-Regular.ttf);
+}
+
+@font-face {
+  font-family: ubantuMed;
+  src: url(../fonts//Ubuntu/Ubuntu-Medium.ttf);
+}
+
+@font-face {
+  font-family: ubantuBold;
+  src: url(../fonts//Ubuntu/Ubuntu-Bold.ttf);
+}
+
+$lightTextColot: #707070;
+$darkTextColor: #282828;
 $primaryColor: #32992c;
 $primaryColor2: #91b509;
+$navColor: #ffffff;
+$backgroundColor: #fcfcfc;
+$bold: ubantuBold;
+$medium: ubantuMed;
+$regular: ubantuReg;

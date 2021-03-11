@@ -1,18 +1,19 @@
 @import "./variables";
 @import "./navbar";
-@import "./footer.scss";
 @import "./loginform";
 @import "./editpopover";
+@import "./footer";
 
 body,
 html,
 #root {
-  background-color: #e5e5e5;
+  background-color: #f8f8f8;
   height: 100%;
+  font-family: $regular;
 }
 
 .main {
   min-height: 100%;
-  background-color: #f8f8f8;
+  background-color: $backgroundColor;
   padding: 0px;
 }

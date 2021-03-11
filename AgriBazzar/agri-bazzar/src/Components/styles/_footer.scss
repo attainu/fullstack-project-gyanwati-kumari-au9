@@ -1,22 +1,23 @@
 .footer {
-  background-color: #fcfcfc;
+  background-color: $navColor;
   height: 40px !important;
   position: fixed;
   bottom: 0px;
+  box-shadow: 0px -4px 4px #e2e2e242;
 }
 
 .footer p {
-  color: #a9a9a9;
+  color: $lightTextColot;
+  font-weight: 600;
   line-height: 20px;
   margin: 8px 20px 0px;
-  font-weight: 600;
 }
 
 .footer a {
-  color: #32992c;
   text-decoration: none;
   text-transform: uppercase;
+  color: $primaryColor;
   &:hover {
-    color: #91b509;
+    color: $primaryColor2;
   }
 }

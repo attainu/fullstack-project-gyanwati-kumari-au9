@@ -1,34 +1,21 @@
 .main .navbar {
-  background-color: $navBackgroundColor !important;
+  background-color: $navColor;
   height: 50px;
   padding-left: 2%;
   padding-right: 2%;
-}
-
-.main .navbar a {
-  min-width: 30px;
-  padding: 0px;
-  margin: 0px;
-  color: $lightTextColor;
+  box-shadow: 0px 4px 4px #e2e2e242;
 }
 
 .main .navbar .right-nav a {
-  margin-right: 20px;
-}
-
-.main .navbar .right-nav .btns {
   text-decoration: none;
-  background-color: transparent;
-  font-weight: 700;
-  width: 80px !important;
-  padding-top: 3px;
-  margin: 0px !important;
-}
-
-.main .navbar .navbar-brand img {
-  width: 150px;
+  color: $darkTextColor;
+  font-family: $bold;
+  margin-left: 35px;
+  &:hover {
+    color: $primaryColor2;
+  }
 }
 
 .main .navbar .right-nav img {
-  width: 21px;
+  width: 25px;
 }
