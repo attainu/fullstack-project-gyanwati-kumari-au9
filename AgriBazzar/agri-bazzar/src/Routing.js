@@ -34,7 +34,7 @@ class Routing extends Component {
   }
   render() {
     return (
-      <div className="container">
+      <div className="container main">
         <Router>
           <Layout.Navbar />
           <Switch>
@@ -52,6 +52,7 @@ class Routing extends Component {
             <Route path="/signup" component={Layout.Signup} />
           </Switch>
         </Router>
+        <Layout.Footer />
       </div>
     );
   }

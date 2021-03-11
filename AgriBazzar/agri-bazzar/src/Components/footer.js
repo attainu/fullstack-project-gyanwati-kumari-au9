@@ -1,16 +1,19 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
-    return(
-        <footer style={{marginTop:"5rem"}}>
-            <div>
-               <hr/>
-               <center>
-               &copy; Agri Bazzar 2021
-               </center>
-            </div>
-        </footer>
-    )
-}
+  return (
+    <footer className="container footer">
+      <div className="d-flex justify-content-between">
+        <p>© Coupon Site</p>
+        <p>
+          Developed by{" "}
+          <a href="https://github.com/varun-hldr" className="link-light">
+            Varun
+          </a>
+        </p>
+      </div>
+    </footer>
+  );
+};
 
 export default Footer;
