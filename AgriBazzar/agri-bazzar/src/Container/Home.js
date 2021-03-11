@@ -2,10 +2,13 @@ import React,{Component} from 'react';
 import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
+// import Card from 'react-bootstrap/Card';
 import {SearchQuery} from '../Actions/actionfile';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import Cards from '../Components/CardsHome';
+import Products from '../Components/offerProd';
+import Framers from '../Components/ourFarmers';
 
 
 
@@ -36,48 +39,9 @@ class Home extends Component{
                     <Button variant="outline-light"  onClick={ this.onSearch.bind(this)} style={{marginLeft:"-10.5px", backgroundColor:"#51AF2B"}}>Find</Button>
                 </Form>
                 </div>
-                <div className="row" >
-                    <Card style={{ width: '16rem' ,marginTop:"300px",marginLeft:"70px"}}>
-                        <Card.Body>
-                            <Card.Title style={{textAlign:"center"}}>Live Stock</Card.Title>
-                            <Card.Text style={{textAlign:"center"}}>
-                            50 items
-                            </Card.Text>
-                            <Card.Img variant="top" src="images/live.jpg" style={{borderRadius:"100%"}}/>
-                            {/* <Button variant="primary">Go somewhere</Button> */}
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '16rem' ,marginTop:"300px",marginLeft:"33px"}}>
-                        <Card.Body>
-                            <Card.Title style={{textAlign:"center"}}>Crops</Card.Title>
-                            <Card.Text style={{textAlign:"center"}}>
-                            150 items
-                            </Card.Text>
-                            <Card.Img variant="top" src="images/capsicum.jpg" style={{borderRadius:"100%"}}/>
-                            {/* <Button variant="primary">Go somewhere</Button> */}
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '16rem' ,marginTop:"300px",marginLeft:"33px"}}>
-                        <Card.Body>
-                            <Card.Title style={{textAlign:"center"}}>Farm Equipments</Card.Title>
-                            <Card.Text style={{textAlign:"center"}}>
-                            250 items
-                            </Card.Text>
-                            <Card.Img variant="top" src="images/equip.jpg" style={{borderRadius:"100%"}}/>
-                            {/* <Button variant="primary">Go somewhere</Button> */}
-                        </Card.Body>
-                    </Card>
-                    <Card style={{ width: '16rem' ,marginTop:"300px",marginLeft:"33px"}}>
-                        <Card.Body>
-                            <Card.Title style={{textAlign:"center"}}>Books</Card.Title>
-                            <Card.Text style={{textAlign:"center"}}>
-                            300 items
-                            </Card.Text>
-                            <Card.Img variant="top" src="images/book.jpg" style={{borderRadius:"100%"}}/>
-                            {/* <Button variant="primary">Go somewhere</Button> */}
-                        </Card.Body>
-                    </Card>
-                </div>
+                <Cards/>
+                <Products/>
+                <Framers/>
 
                
             </div>
