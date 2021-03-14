@@ -7,7 +7,7 @@ const OurFarmers = () => {
        <div className="container"style={{textAlign:"center",marginTop:"50px"}}>
            <h3 style={{fontSize:"42pt"}}>Our Farmers</h3>
             <h6>Welcome our agriculture specialists</h6>
-           <div className="row" style={{marginLeft:"130px"}}>
+           <div className="row" style={{marginLeft:"130px",marginTop:"50px"}}>
            <CardDeck>
                 <Card>
                     <Card.Img variant="top" src="https://template63458.motopreview.com/mt-demo/63400/63458/mt-content/uploads/2017/05/mt-0983-home-fermers1.jpg" />

@@ -3,14 +3,13 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import React from 'react';
-import './CardsHome.css';
 
 const Cards = () => {
     return(
         <Container>
-        <Row >
-          <Col sm={true}>
-                <Card style={{ width: '14rem' ,marginTop:"300px",marginLeft:"120px"}}>
+        <Row style={{display:"flex"}}>
+          <Col md={{ span:3}}>
+                <Card style={{ width: '14rem',top:"-160px",left:"100px"}}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Live Stock</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
@@ -21,8 +20,8 @@ const Cards = () => {
                     </Card.Body>
                 </Card>
           </Col>
-          <Col sm={true}>
-                <Card style={{ width: '14rem' ,marginTop:"300px"}}>
+          <Col md={{ span: 3 }}>
+                <Card style={{ width: '14rem' ,top:"-160px",left:"100px"}}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Crops</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
@@ -33,8 +32,8 @@ const Cards = () => {
                     </Card.Body>
                 </Card>
           </Col>
-          <Col sm={true}> 
-                <Card style={{ width: '14rem' ,marginTop:"300px"}}>
+          <Col md={{ span: 3}}> 
+                <Card style={{ width: '14rem' ,top:"-160px",left:"100px"}}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Farm Equipments</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
@@ -45,8 +44,8 @@ const Cards = () => {
                     </Card.Body>
                 </Card>
           </Col>
-          <Col sm={true}>
-                <Card style={{ width: '14rem' ,marginTop:"300px"}}>
+          <Col md={{ span: 3 }}>
+                <Card style={{ width: '14rem' ,top:"-160px",left:"100px"}}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Books</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
