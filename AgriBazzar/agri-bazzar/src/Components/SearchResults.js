@@ -6,7 +6,7 @@ const SearchResults = (props) => {
         <ListGroup.Item as="li" key={res.id}>{res.text}</ListGroup.Item>
       ))
     return(
-        <ListGroup as="ul" s style={{width:"450px",marginLeft:"20px"}}>
+        <ListGroup as="ul" s style={{width:"506px"}}>
             {SearchList}
       </ListGroup>
     )

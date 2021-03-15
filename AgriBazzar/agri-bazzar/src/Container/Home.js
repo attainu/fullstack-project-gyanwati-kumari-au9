@@ -51,7 +51,6 @@ class Home extends Component{
                         <SearchList searchresult={this.props.searchresult}/>
 
                     </Col>
-                    {/* <SearchList searchresult={this.props.searchresult && this.props.searchresult.map(m=> <h1>{m.text}</h1>)} /> */}
                 </Row>
 
                 <Cards/>

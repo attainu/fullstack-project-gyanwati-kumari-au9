@@ -10,7 +10,7 @@ const Header = (props) => {
     return(
         
         <Navbar collapseOnSelect expand="lg"  variant="dark" fixed="top" style={{backgroundColor:"#51AF2B",color:"white"}} >
-            <Navbar.Brand href="/">Agri Bazzar</Navbar.Brand>
+            <Navbar.Brand href="/"><img src="images/final logo.png" alt="" style={{height:"40px"}}/></Navbar.Brand>
             <Navbar.Toggle aria-controls="responsive-navbar-nav" />
             <Navbar.Collapse id="responsive-navbar-nav">
                 <Nav className="mr-auto">
