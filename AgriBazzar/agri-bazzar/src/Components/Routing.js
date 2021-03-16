@@ -6,6 +6,7 @@ import Footer from './footer';
 import SignUp from './signUp';
 import Login from './login';
 import Mandi from '../Container/Mandi';
+import Crops from './Crops';
 
 
 const Routing = () => {
@@ -18,7 +19,8 @@ const Routing = () => {
                     <Route exact path="/" component={Home}/>
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={SignUp} />
-                    <Route path="/mandi" component={Mandi} />
+                    <Route path="/crops" component={Crops} />
+                    {/* <Route path="/mandi" component={Mandi} /> */}
 
                     
                 </div>

@@ -21,11 +21,11 @@ class Crops extends Component{
         }
 
     }
-    expandedText() {
-        this.setState({
-            expanded: true
-        });       
-    }
+    // expandedText() {
+    //     this.setState({
+    //         expanded: true
+    //     });       
+    // }
 
     paginationClick(pageNum){
         this.props.dispatch(paginate(pageNum))
