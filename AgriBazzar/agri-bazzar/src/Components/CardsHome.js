@@ -16,6 +16,10 @@ class Cards extends Component{
             // 
         }
         this.onClickCrops = this.onClickCrops.bind(this);
+        this.onClickLiveStock = this.onClickLiveStock.bind(this);
+        this.onClickFarmEquip = this.onClickFarmEquip.bind(this);
+        this.onClickKnldgCenter = this.onClickKnldgCenter.bind(this);
+
 
     }
     componentDidMount(){
@@ -26,6 +30,18 @@ class Cards extends Component{
     onClickCrops(e){
         e.preventDefault()
         this.props.history.push("/crops")
+    }
+    onClickLiveStock(e){
+        e.preventDefault()
+        this.props.history.push("/liveStock")
+    }
+    onClickFarmEquip(e){
+        e.preventDefault()
+        this.props.history.push("/farmEquip")
+    }
+    onClickKnldgCenter(e){
+        e.preventDefault()
+        this.props.history.push("/knowledgeCenter")
     }
 
     render(){
@@ -63,6 +79,7 @@ class Cards extends Component{
           </Col>
           <Col md={{ span: 3}}> 
                 <Card style={{ width: '14rem' ,top:"-160px",left:"100px"}}>
+                    <Card.Link href="#" onClick={e => this.onClickFarmEquip(e)}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Farm Equipments</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
@@ -71,18 +88,21 @@ class Cards extends Component{
                         <Card.Img variant="top" src="images/equip.jpg" style={{borderRadius:"100%"}}/>
                         {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
+                    </Card.Link>
                 </Card>
           </Col>
           <Col md={{ span: 3 }}>
                 <Card style={{ width: '14rem' ,top:"-160px",left:"100px"}}>
+                    <Card.Link href="#" onClick={e => this.onClickKnldgCenter(e)}>
                     <Card.Body>
-                        <Card.Title style={{textAlign:"center"}}>Books</Card.Title>
+                        <Card.Title style={{textAlign:"center"}}>Knowledge Center</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
                         300 items
                         </Card.Text>
                         <Card.Img variant="top" src="images/book.jpg" style={{borderRadius:"100%"}}/>
                         {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
+                    </Card.Link>
                 </Card>
           </Col>
         </Row>

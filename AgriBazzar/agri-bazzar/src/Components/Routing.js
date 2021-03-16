@@ -7,6 +7,9 @@ import SignUp from './signUp';
 import Login from './login';
 import Mandi from '../Container/Mandi';
 import Crops from './Crops';
+import LiveStock from './liveStock';
+import FarmEquip from './FarmEquipment';
+import KnowledgeCenter from './KnowledgeCenter';
 
 
 const Routing = () => {
@@ -20,6 +23,11 @@ const Routing = () => {
                     <Route path="/login" component={Login} />
                     <Route path="/signup" component={SignUp} />
                     <Route path="/crops" component={Crops} />
+                    <Route path="/liveStock" component={LiveStock} />
+                    <Route path="/farmEquip" component={FarmEquip} />
+                    <Route path="/knowledgeCenter" component={KnowledgeCenter} />
+
+
                     {/* <Route path="/mandi" component={Mandi} /> */}
 
                     
