@@ -7,6 +7,8 @@ import Pagination from './pagination';
 import {paginate} from '../Actions/actionfile';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
+import ReadMoreReact from 'read-more-react';
+
 
 
 
@@ -21,11 +23,7 @@ class Crops extends Component{
         }
 
     }
-    // expandedText() {
-    //     this.setState({
-    //         expanded: true
-    //     });       
-    // }
+   
 
     paginationClick(pageNum){
         this.props.dispatch(paginate(pageNum))
@@ -39,8 +37,8 @@ class Crops extends Component{
                     <Col md={{span:4}}>
                         <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Mature_Rice_%28India%29_by_Augustus_Binu.jpg/300px-Mature_Rice_%28India%29_by_Augustus_Binu.jpg" alt="" />
                     </Col>
-                    <Col md={{span:8}}>
-                        <p>Rice production in India is an important part of the national economy.[1]
+                    <Col md={{span:8}} style={{textAlign:"justify"}}>
+                    <ReadMoreReact text="Rice production in India is an important part of the national economy.[1]
                             Major cropping areas in India. Rice shaded in light jade green indicates 
                             the most important and extensive growing areas in the east of the country
                             Dry productive Paddy Fields in South India Mature Rice, Thrissur, Kerala, India.
@@ -53,14 +51,17 @@ class Crops extends Component{
                             result of an increase in yields; the number of hectares did not increase during this period.
                             Yields increased from 1,336 kilograms per hectare in FY 1980 to 1,751 kilograms per hectare 
                             in FY 1990. The per-hectare yield increased more than 262 percent between 1950 and 1992.
-                            <h5>Paddy Field</h5>
+                            Paddy Field
                             The country's rice production had declined to 89.13 million tonnes in 2009-10 crop year 
                             (July–June) from record 99.18 million tonnes in the previous year due to severe drought 
                             that affected almost half of the country. India could achieve a record rice production 
                             of 100 million tonnes in 2010-11 crop year on the back of better monsoon this year. 
                             The India's rice production reached to a record high of 104.32 million tonnes in 2011-2012 
-                            crop year (July–June).</p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> Read More >></button>
+                            crop year (July–June)."
+                        min={250}
+                        ideal={300}
+                        max={2500}
+                        readMoreText=" << read more >>"/>
                     </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"42pt",color:"#BCF456"}}>Wheat production in India</h2>
@@ -68,8 +69,8 @@ class Crops extends Component{
                     <Col md={{span:4}}>
                         <img src="https://previews.123rf.com/images/ssyzxf/ssyzxf1605/ssyzxf160500008/56443832-growing-wheat.jpg" alt="" style={{width:"300px",height:"300px"}}/>
                     </Col>
-                    <Col md={{span:8}} >
-                        <p >Wheat is grown on more land area than any other food crop (220.4 million hectares, 2014).[5] 
+                    <Col md={{span:8}} style={{textAlign:"justify"}}>
+                    <ReadMoreReact text="Wheat is grown on more land area than any other food crop (220.4 million hectares, 2014).[5] 
                             World trade in wheat is greater than for all other crops combined.[6] In 2017, world production 
                             of wheat was 772 million tonnes, with a forecast of 2019 production at 766 million tonnes,[7] 
                             making it the second most-produced cereal after maize.[7][8] Since 1960, world production of 
@@ -82,7 +83,7 @@ class Crops extends Component{
                             13%, which is relatively high compared to other major cereals[12] but relatively low in protein
                             quality for supplying essential amino acids.[13][14] When eaten as the whole grain, wheat is a
                             source of multiple nutrients and dietary fiber.[10]
-                            <h5>Wheat Field</h5>
+                            Wheat Field:-
                             Crop development
                             Wheat normally needs between 110 and 130 days between sowing and harvest, depending upon climate, 
                             seed type, and soil conditions (winter wheat lies dormant during a winter freeze). Optimal crop 
@@ -96,10 +97,12 @@ class Crops extends Component{
                             to high temperatures, and this adverse effect is made worse by water stress.[139] Farmers also
                             benefit from knowing when the 'flag leaf' (last leaf) appears, as this leaf represents about 75%
                             of photosynthesis reactions during the grain filling period, and so should be preserved from disease 
-                            or insect attacks to ensure a good yield.
-                            </p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> Read More >></button>
-                    </Col>
+                            or insect attacks to ensure a good yield."
+                        min={250}
+                        ideal={300}
+                        max={2500}
+                        readMoreText=" << read more >>"/>
+                        </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"42pt",color:"#BCF456"}}>Gram production in India</h2>
                 <Row style={{display:"flex",flexWrap:"nowrap"}}> 
@@ -107,16 +110,18 @@ class Crops extends Component{
                         <img src="https://kj1bcdn.b-cdn.net/media/38419/chickpea.png" alt="" style={{width:"300px",height:"300px"}}/>
                     </Col>
                     <Col md={{span:8}} >
-                        <p >Pulse prices continue to reel under pressure since last year.
-                            Take chana, for instance, whose prices are ruling below government minimum support prices.
-                            Domestic and export demand for pulses stays softer than expected. Considering the arrival 
-                            of new crops in mandies, we expect the prices to see more pressure in March, which will test 
-                            the crucial support of Rs 3,940 in coming days.<br/>
-                            Chana, a major rabi pulse crop of India sown during October-November, is harvested in February
-                            and March. Its major producers are Rajasthan, Madhya Pradesh, Maharashtra, Karnataka, Uttar 
-                            Pradesh and Andhra Pradesh.
-                            </p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> Read More >></button>
+                        <ReadMoreReact text="Pulse prices continue to reel under pressure since last year.
+                                Take chana, for instance, whose prices are ruling below government minimum support prices.
+                                Domestic and export demand for pulses stays softer than expected. Considering the arrival 
+                                of new crops in mandies, we expect the prices to see more pressure in March, which will test 
+                                the crucial support of Rs 3,940 in coming days.
+                                Chana, a major rabi pulse crop of India sown during October-November, is harvested in February
+                                and March. Its major producers are Rajasthan, Madhya Pradesh, Maharashtra, Karnataka, Uttar 
+                                Pradesh and Andhra Pradesh."
+                            min={250}
+                            ideal={300}
+                            max={2500}
+                            readMoreText=" << read more >>"/>
                     </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"42pt",color:"#BCF456"}}>Market Price Details</h2>

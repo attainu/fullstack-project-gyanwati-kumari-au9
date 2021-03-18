@@ -7,26 +7,20 @@ import Pagination from './pagination';
 import {paginate} from '../Actions/actionfile';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-
+import ReadMoreReact from 'read-more-react';
 
 
 class KnowledgeCenter extends Component{
     constructor(){
         super();
         this.state ={
-            expanded:false,
             pageCount: 5,
             perPage: 2,
             currentPage: 0,
         }
 
     }
-    // expandedText() {
-    //     this.setState({
-    //         expanded: true
-    //     });       
-    // }
-
+   
     paginationClick(pageNum){
         this.props.dispatch(paginate(pageNum))
  
@@ -39,16 +33,18 @@ class KnowledgeCenter extends Component{
                     <Col md={{span:4}}>
                         <img src="https://images-na.ssl-images-amazon.com/images/I/51ZmdJmtYPL._SX324_BO1,204,203,200_.jpg" alt=""/>
                     </Col>
-                    <Col md={{span:8}}>
-                        <p>
-                        Green Revolution strategy developed India???????????????s agriculture sector phenomenally 
-                        from 1970 to 1990 and made India self sufficient in food grains and other agricultural 
-                        commodities. The limitation of small size of the farms was made good by a package of 
-                        inputs and small farmers of India competed well with developed countries. However, 
-                        since 1990s and during the last five years farmers are facing the problem of decreasing 
-                        income and many farmers have committed suicide during the last
-                            </p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> >>Read More</button>
+                    <Col md={{span:8}} style={{textAlign:"justify"}}>
+                        <ReadMoreReact text="Green Revolution strategy developed India???????????????s agriculture sector phenomenally 
+                            from 1970 to 1990 and made India self sufficient in food grains and other agricultural 
+                            commodities. The limitation of small size of the farms was made good by a package of 
+                            inputs and small farmers of India competed well with developed countries. However, 
+                            since 1990s and during the last five years farmers are facing the problem of decreasing 
+                            income and many farmers have committed suicide during the last"
+                        min={250}
+                        ideal={300}
+                        max={2500}
+                        readMoreText=" << read more >>"/>
+                            
                     </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"32pt",color:"#BCF456"}}>Agricultural Economy of India: Current Status and Issues:</h2>
@@ -56,8 +52,8 @@ class KnowledgeCenter extends Component{
                     <Col md={{span:4}}>
                         <img src="https://images-na.ssl-images-amazon.com/images/I/41BaywoS+FL._SY344_BO1,204,203,200_.jpg" alt="" />
                     </Col>
-                    <Col md={{span:8}} >
-                        <p >Agriculture occupies a key position in the Indian economy. Though Agriculture has shrunk as a Proportion 
+                    <Col md={{span:8}} style={{textAlign:"justify"}} >
+                        <ReadMoreReact text="Agriculture occupies a key position in the Indian economy. Though Agriculture has shrunk as a Proportion 
                             of the gross domestic product (GDP) to around 13 percent, it is a vital sector and provider of livelihood 
                             for two-thirds of India's working population. Agriculture being a state subject, The bulk of public 
                             investment in Agriculture takes place at the level of states, with the central Government supporting 
@@ -76,9 +72,13 @@ class KnowledgeCenter extends Component{
                             programs to rejuvenate Agriculture and improve farm income. The present work explains and examines the 
                             key reform measures undertaken for the modernization of Indian Agriculture. Challenges facing this vital 
                             sector of the economy are also discussed. [Subject: Agriculture, India studies, economics, development 
-                            studies, sustainable development, economic development].
-                            </p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> >>Read More</button>
+                            studies, sustainable development, economic development]."
+                        min={250}
+                        ideal={300}
+                        max={2500}
+                        readMoreText=" << read more >>"/>
+                            
+                            
                     </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"42pt",color:"#BCF456"}}>Concise Agriculture for all Agricultural Competitive Exams</h2>
@@ -86,11 +86,15 @@ class KnowledgeCenter extends Component{
                     <Col md={{span:4}}>
                         <img src="https://images-na.ssl-images-amazon.com/images/I/514OZdaGpLL._SX400_BO1,204,203,200_.jpg" alt="" style={{height:"300px",width:"300px"}}/>
                     </Col>
-                    <Col md={{span:8}} >
-                        <p >Concise Agriculture for all Agricultural Competitive Exams (Includes Previous Years Papers 
-                            of PSCS and SAUS) By C.R. Kantwa
-                            </p>
-                            <button onClick={this.expandedText} style={{backgroundColor:"white",border:"0", color:"#51AF2B"}}> >>Read More</button>
+                    <Col md={{span:8}} style={{textAlign:"justify"}} >
+                    <ReadMoreReact text="Concise Agriculture for all Agricultural Competitive Exams (Includes Previous Years Papers 
+                        of PSCS and SAUS) By C.R. Kantwa"
+                        min={250}
+                        ideal={300}
+                        max={2500}
+                        readMoreText=" << read more >>"/>
+                        
+                    
                     </Col>
                 </Row>
                 <h2 style={{marginTop:"50px",textAlign:"center",fontFamily:"sans-serif",fontSize:"42pt",color:"#BCF456"}}>Agricultural Books Details</h2>
