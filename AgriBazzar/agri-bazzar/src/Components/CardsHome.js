@@ -5,7 +5,6 @@ import Col from 'react-bootstrap/Col';
 import Card from 'react-bootstrap/Card';
 import {withRouter} from 'react-router-dom';
 import {connect} from 'react-redux';
-// import {allCrops} from '../Actions/actionfile';
 
 
 
@@ -50,14 +49,13 @@ class Cards extends Component{
         <Row style={{display:"flex"}}>
           <Col md={{ span:3}}>
                 <Card style={{ width: '14rem',top:"-160px",left:"100px"}}>
-                    <Card.Link href="#" onClick={e => this.onClickLive(e)}>
+                    <Card.Link href="#" onClick={e => this.onClickLiveStock(e)}>
                     <Card.Body>
                         <Card.Title style={{textAlign:"center"}}>Live Stock</Card.Title>
                         <Card.Text style={{textAlign:"center"}}>
                         50 items
                         </Card.Text>
                         <Card.Img variant="top" src="images/live.jpg" style={{borderRadius:"100%"}}/>
-                        {/* <Button variant="primary">Go somewhere</Button> */}
                     </Card.Body>
                     </Card.Link>
                 </Card>
