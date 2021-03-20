@@ -3,8 +3,50 @@ import GoogleLogin from './gLogin';
 import Container from 'react-bootstrap/Container'
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import {saveSignUpDetails} from '../Actions/actionfile';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
 
-export default class SignUp extends Component {
+class SignUp extends Component {
+    constructor(props){
+        super(props);
+        this.profile = React.createRef(props.userSignup);
+
+        this.state={
+            // 
+        }
+        this.handleChange = this.handleChange.bind(this);
+
+    }
+
+    updateProfile = (e) => {
+        e.preventDefault()
+        console.log("====Update Profile ==",this.state)
+        this.props.dispatch(saveSignUpDetails(this.state.profile))
+        alert("SignUp successfuly !")
+    }
+    getInitialState(){
+        console.log("Get Initial state called")
+        return {profile:this.props.userSignup}
+    }
+    handleChange(e) {
+        const newChange ={
+            ...this.state.profile,
+            [e.target.name] : e.target.value
+        }
+        this.setState({ profile:newChange });
+     }
+
+    componentDidMount(){
+        this.props.dispatch(saveSignUpDetails())
+        console.log("========Component Did Mount==========>",this.props.userSignup)
+    }
+    componentDidUpdate(prevProps){
+        if(this.props.userSignup != prevProps.userSignup){
+            this.setState({profile: this.props.userSignup})
+        }
+    }
+
     render() {
         return (
             <Container>
@@ -18,16 +60,16 @@ export default class SignUp extends Component {
                         <h3>Hello,<br/>Welcome To Agri Bazzar</h3>
                         <div className="form-group">
                             <label>Name</label>
-                            <input type="Name" className="form-control" placeholder="Enter Name" style={{width:"350px"}}/>
+                            <input type="text" name="name" value={this.state.profile && this.state.profile.name} className="form-control" placeholder="Enter Name" style={{width:"350px"}}  onChange={this.handleChange}/>
                         </div>
                         <div className="form-group">
                             <label>Email</label>
-                            <input type="email" className="form-control" placeholder="Enter email" style={{width:"350px"}}/>
+                            <input type="text" name="email" value={this.state.profile && this.state.profile.email}  className="form-control" placeholder="Enter email" style={{width:"350px"}}  onChange={this.handleChange}/>
                         </div>
 
                         <div className="form-group">
                             <label>Password</label>
-                            <input type="password" className="form-control" placeholder="Enter password" style={{width:"350px"}}/>
+                            <input type="text" name="password" value={this.state.profile && this.state.profile.password} className="form-control" placeholder="Enter password" style={{width:"350px"}}  onChange={this.handleChange}/>
                         </div>
 
                         <div className="form-group">
@@ -37,7 +79,7 @@ export default class SignUp extends Component {
                             </div>
                         </div>
 
-                        <button type="submit" className="btn btn-dark btn-lg btn-block" style={{width:"350px",backgroundColor:"#51AF2B",borderBlockColor:"#51AF2B"}}>Sign Up</button>
+                        <button type="submit" className="btn btn-dark btn-lg btn-block" style={{width:"350px",backgroundColor:"#51AF2B",borderBlockColor:"#51AF2B"}} onClick={this.updateProfile}>Sign Up</button>
                         {/* <p className="forgot-password text-right" style={{width:"350px"}}>
                             Forgot <a href="#">password?</a>
                         </p> */}
@@ -54,3 +96,10 @@ export default class SignUp extends Component {
         );
     }
 }
+
+function mapStateToProps(state){
+    console.log("==== MAp State========>",state)
+    return {userSignup : state.search.userSignup}
+}
+
+export default  withRouter(connect(mapStateToProps)(SignUp));

@@ -16,7 +16,6 @@ class Crops extends Component{
     constructor(){
         super();
         this.state ={
-            expanded:false,
             pageCount: 5,
             perPage: 2,
             currentPage: 0,

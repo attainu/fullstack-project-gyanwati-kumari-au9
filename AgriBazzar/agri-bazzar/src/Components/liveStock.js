@@ -7,6 +7,12 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import CardDeck from 'react-bootstrap/CardDeck';
 import Card from 'react-bootstrap/Card';
+import {paginate,filterProducts} from '../Actions/actionfile';
+import {withRouter} from 'react-router-dom';
+import {connect} from 'react-redux';
+import Pagination from './pagination';
+
+
 
 
 class LiveStock extends Component{
@@ -15,6 +21,17 @@ class LiveStock extends Component{
         this.state ={
             // 
         }
+        // this.filterChange = this.filterChange.bind(this);
+
+    }
+
+   
+    paginationClick(pageNum){
+        this.props.dispatch(paginate(pageNum))
+ 
+    }
+    filterChange(name){
+        this.props.dispatch(filterProducts(name))
     }
 
     render(){
@@ -63,17 +80,17 @@ class LiveStock extends Component{
                     <Col md={{span:9,offset:1}}>
                         <Button style={{backgroundColor:"#51AF2B"}}>Sell Products</Button>{' '}
 
-                        <Dropdown style={{float:"right"}}>
+                        <Dropdown style={{float:"right"}} >
                             <Dropdown.Toggle variant="success" id="dropdown-basic">
                                 Live Stock Sort By
                             </Dropdown.Toggle>
 
-                            <Dropdown.Menu>
-                                <Dropdown.Item href="#/action-1">Rice</Dropdown.Item>
-                                <Dropdown.Item href="#/action-2">Wheat</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Corn</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Chana</Dropdown.Item>
-                                <Dropdown.Item href="#/action-3">Mustard</Dropdown.Item>
+                            <Dropdown.Menu  >
+                                <Dropdown.Item href="#" value={this.props.name}  onClick={(a) => this.filterChange(a)}>Rice</Dropdown.Item>
+                                <Dropdown.Item href="#" value={this.props.name} onChange={(a)=> this.filterChange(a)}>Wheat</Dropdown.Item>
+                                <Dropdown.Item href="#" onChange={(a)=> this.filterChange(a)}>Corn</Dropdown.Item>
+                                <Dropdown.Item href="#" onChange={(a)=> this.filterChange(a)}>Chana</Dropdown.Item>
+                                <Dropdown.Item href="#" onChange={(a)=> this.filterChange(a)}>Mustard</Dropdown.Item>
                             </Dropdown.Menu>
                         </Dropdown>
 
@@ -179,9 +196,15 @@ class LiveStock extends Component{
                         </CardDeck>
                     </Col>
                 </Row>
+                <Pagination currentPage={this.props.currPage} perPage={this.props.perPage} pageCount={this.props.pageCount} paginationClick={(a,b) => this.paginationClick(a,b)} />
             </Container>
         )
     }
 }
 
-export default LiveStock;
+function mapStateToProps(state){
+    console.log("==== MAp State========>",state)
+    return { currPage: state.pagination.currPage, perPage: state.pagination.perPage, pageCount: state.pagination.pageCount, products: state.filter.items,name: state.filter.name}
+}
+
+export default  withRouter(connect(mapStateToProps)(LiveStock));
